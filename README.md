@@ -1,0 +1,20 @@
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/thananon/covidth">
+    <img src="public/favicon.ico" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">COVID TH</h3>
+
+  <p align="center">
+    Project website display Covid data.
+    <br />
+    <a href="https://github.com/thananon/covidth"><strong>Explore the docs »</strong></a>
+    
+  </p>
+</p>
+
+## About This Project
+
