@@ -2,9 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/thananon/covidth">
     <img src="public/favicon.ico" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">SMART BIN</h3>
 
