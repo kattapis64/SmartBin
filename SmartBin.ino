@@ -1,4 +1,3 @@
-//เปลี่ยน Theme เป็น Light (Visual Studio)
 // header ต่าง ๆ นานา ๆ
 #include <Arduino.h>
 #include <WiFi.h>
@@ -457,8 +456,8 @@ esp_err_t wifi_status_handler(httpd_req_t *req)
 esp_err_t ctrl_forward(httpd_req_t *req)
 {
     Serial.println("MOTOR: FORWARD");
-    s1.writeMicroseconds(1300);
-    s2.writeMicroseconds(1700);
+    s1.writeMicroseconds(1000);
+    s2.writeMicroseconds(1850);
     httpd_resp_send(req, "OK", HTTPD_RESP_USE_STRLEN);
     return ESP_OK;
 }
@@ -468,7 +467,7 @@ esp_err_t ctrl_left(httpd_req_t *req)
 {
     Serial.println("MOTOR: LEFT");
     s1.writeMicroseconds(1500);
-    s2.writeMicroseconds(1700);
+    s2.writeMicroseconds(1150);
     httpd_resp_send(req, "OK", HTTPD_RESP_USE_STRLEN);
     return ESP_OK;
 }
@@ -477,7 +476,7 @@ esp_err_t ctrl_left(httpd_req_t *req)
 esp_err_t ctrl_right(httpd_req_t *req)
 {
     Serial.println("MOTOR: RIGHT");
-    s1.writeMicroseconds(1300);
+    s1.writeMicroseconds(2000);
     s2.writeMicroseconds(1500);
     httpd_resp_send(req, "OK", HTTPD_RESP_USE_STRLEN);
     return ESP_OK;
@@ -487,8 +486,8 @@ esp_err_t ctrl_right(httpd_req_t *req)
 esp_err_t ctrl_reverse(httpd_req_t *req)
 {
     Serial.println("MOTOR: REVERSE");
-    s1.writeMicroseconds(1700);
-    s2.writeMicroseconds(1300);
+    s1.writeMicroseconds(2000);
+    s2.writeMicroseconds(1150);
     httpd_resp_send(req, "OK", HTTPD_RESP_USE_STRLEN);
     return ESP_OK;
 }
@@ -647,8 +646,9 @@ void setup()
     delay(3000);
     Serial.println("BOOT");
 
-    s1.attach(21);
-    s2.attach(14);
+    //เริ่มต้นการสื่อสารกับ Servo สองอันที่ 14 21
+    s1.attach(14);
+    s2.attach(21);
     init_camera();
     //เปิดไวไฟให้คนต่อ   
     WiFi.mode(WIFI_AP_STA);
